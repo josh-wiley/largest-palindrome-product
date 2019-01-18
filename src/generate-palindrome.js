@@ -13,10 +13,10 @@ const generatePalindrome = digits => {
   const palindrome = digits.map(x => x);
 
   // get index of end of first-half of the array
-  const firstHalfEndIndex = Math.floor((digits.length - 1) / 2);
+  const firstHalfEndIndex = Math.floor((palindrome.length - 1) / 2);
 
   // get index of beginning of last-half of the array
-  const secondHalfStartIndex = Math.ceil(digits.length / 2);
+  const secondHalfStartIndex = Math.ceil(palindrome.length / 2);
 
   // generate palindrome
   for (let i = 0; i < secondHalfStartIndex; i++) {

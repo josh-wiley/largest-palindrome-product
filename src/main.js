@@ -50,24 +50,17 @@ while (!success) {
   // generate palindrome
   palindrome = generatePalindrome(Number.toArray(product));
 
-  // generate palindrome integer
-
   // product of two 3-digit integers?
   const dividend = Array.toInteger(palindrome);
-  for (let i = MAX_OPERAND; i >= MIN_OPERAND; i--) {
+  for (let i = MAX_OPERAND; i >= MIN_OPERAND && !success; i--) {
     // get quotient
     let quotient = dividend / i;
 
     // is quotient 3-digit integer?
-    if (
+    success =
       quotient <= MAX_OPERAND &&
       quotient >= MIN_OPERAND &&
-      Number.isInteger(quotient)
-    ) {
-      // Success!
-      success = true;
-      break;
-    }
+      Number.isInteger(quotient);
   }
 
   // Step down.

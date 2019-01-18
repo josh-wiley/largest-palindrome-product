@@ -27,8 +27,8 @@ const arrayToInteger = array => {
   }
 
   // reduce digits to single integer value
-  const reducer = (value, aggregate, i, arr) =>
-    aggregate + value * Math.pow(10, arr.length - i - 1);
+  const reducer = (aggregate, value, i, array) =>
+    aggregate + value * Math.pow(10, array.length - i - 1);
 
   // reduce digits to single integer value & return
   return array.reduce(reducer, 0);
